@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-slate-800 antialiased font-sans overscroll-none overflow-x-hidden;
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(217,100%,96%,1) 0, transparent 50%), 
+      radial-gradient(at 50% 0%, hsla(213,100%,98%,1) 0, transparent 50%), 
+      radial-gradient(at 100% 0%, hsla(217,100%,94%,1) 0, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  /* Smooth scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+
+  /* Shared Card Style */
+  .glass-card {
+    @apply bg-surface/90 backdrop-blur-xl border border-white/50 shadow-glass rounded-4xl;
+  }
+
+  /* Form Elements */
+  .input-field {
+    @apply w-full bg-slate-50/50 border border-slate-200/60 rounded-2xl px-5 py-4 text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 focus:bg-white transition-all shadow-inner-soft;
+  }
+  
+  .label-text {
+    @apply block text-sm font-semibold text-slate-500 mb-2 uppercase tracking-wider ml-1;
+  }
+
+  .btn-primary {
+    @apply w-full flex items-center justify-center gap-3 bg-gradient-to-r from-brand-600 to-brand-500 text-white font-semibold py-4 px-6 rounded-2xl shadow-[0_8px_30px_rgb(59,130,246,0.3)] hover:shadow-[0_8px_30px_rgb(59,130,246,0.4)] transition-all active:scale-[0.98];
+  }
+}
